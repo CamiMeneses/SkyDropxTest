@@ -11,7 +11,7 @@ class ShipmentsController < ApplicationController
     @shipment = current_user.shipments.new
 
     if shipment_params_empty? && !json_data
-      flash[:notice] = 'Por favor revisa la información ingresada'
+      flash[:alert] = 'Por favor revisa la información ingresada'
     elsif json_data
       json_data.each do |shipment|
         create_shipment(shipment)
@@ -33,7 +33,7 @@ class ShipmentsController < ApplicationController
         flash[:notice] = "Tus envíos se registraron con exito #{shipment ['tracking_number']}"
       end
     rescue
-      flash[:notice] = "Hay un problema con el envío #{shipment['tracking_number']}"
+      flash[:alert] = "Hay un problema con el envío #{shipment['tracking_number']}"
     end
   end
 

@@ -1,26 +1,33 @@
-
-<a href="<%=root_path%>" class="btn-floating btn-large red right"><i class="material-icons">arrow_back</i></a>
-<div class="row">
-  <div class="col s12">
-    <%= form_for @shipment do |f| %>
-      <h2 class="red-text">Envío nuevo</h2>
-        <div class="row">
-          <div class="input-field col s6">
-            <%= f.label :Ingresa_el_número_de_guía %><br>
-            <%= f.number_field :tracking_number, id: 'tracking_number' %>
+<div class='container'>
+  <div class="row">
+    <div class="col s12">
+      <%= form_for @shipment do |f| %>
+        <h2 class="red-text">Realiza un nuevo envío</h2>
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">confirmation_number</i>
+              <%= f.label :Ingresa_el_número_de_guía %><br>
+              <%= f.number_field :tracking_number, id: 'tracking_number' %>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">local_shipping</i>
+              <%= f.label :Nombre_de_la_paquetería %><br>
+              <%= f.text_field :carrier, id: 'carrier'%>
+            </div>
           </div>
-          <div class="input-field col s6">
-            <%= f.label :Nombre_de_la_paquetería %><br>
-            <%= f.text_field :carrier, id: 'carrier'%>
+          <br />
+          <h5 class="red-text">o ingresa un JSON</h5>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea type="text_area" id="json_data" name="json_data" placeholder='Ej. [{"tracking_number": "449044304137821","carrier": "FEDEX"}]'></textarea>
+            </div>
           </div>
-        </div>
-        <div class="row">
-        <textarea type="text_area" id="json_data" name="json_data" placeholder="Ingresa un array de JSON"></textarea>
-        </div>
-      <button class="btn waves-effect waves-light red" name="action">
-        <%= f.submit 'Aceptar', :class => 'white-text', :id => "submit"%>
-        <i class="material-icons right">send</i>
-      </button>
-    <% end %>
+        <button class="btn waves-effect waves-light red" name="action">
+          <%= f.submit 'Enviar', :class => 'white-text', :id => "submit"%>
+          <i class="material-icons right">send</i>
+        </button>
+      <% end %>
+    </div>
   </div>
 </div>
+<a href="<%=root_path%>" class="btn-floating btn-large red right arrow-back"><i class="material-icons">arrow_back</i></a>

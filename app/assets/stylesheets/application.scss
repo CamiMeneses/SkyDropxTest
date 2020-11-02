@@ -14,5 +14,29 @@
  *= require_self
  */
 
- @import "materialize";
- @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "materialize";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+textarea {
+  border-radius: 1.5em;
+  border-color: rgba(128, 128, 128, 0.47);
+  margin: 0px;
+  height: 10em;
+  padding: 1em;
+}
+
+.alert.alert-success{
+  background: #28beb783;
+  color: white;
+  border-radius: 2em;
+  padding: 1em;
+}
+.alert{
+  background: #f4423563;
+  color: white;
+  border-radius: 2em;
+  padding: 1em;
+}
+.arrow-back{
+  margin: 0em 1.5em 2em 0em;
+}

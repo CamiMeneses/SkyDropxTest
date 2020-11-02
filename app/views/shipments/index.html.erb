@@ -1,24 +1,25 @@
 
-<h1 class="red-text">My Shipments</h1>
-<a href="<%=new_shipment_path%>" class="btn-floating btn-large red right"><i class="material-icons">add</i></a>
+<div class='container'>
+  <h1 class="red-text">Mis Envíos</h1>
 
-<table class="responsive-table">
-  <thead>
-    <tr>
-      <th>Paquetería</th>
-      <th>Número de guía</th>
-      <th>Status</th>
-      <th>Descripción</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @shipments.each do |shipment| %>
+  <table class="striped highlight">
+    <thead>
       <tr>
-        <td><%= shipment.carrier %></td>
-        <td><%= shipment.tracking_number %></td>
-        <td><%= shipment.status %></td>
-        <td><%= shipment.description %></td>
+        <th>Paquetería</th>
+        <th>Número de guía</th>
+        <th>Status</th>
+        <th>Descripción</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @shipments.each do |shipment| %>
+        <tr>
+          <td><%= shipment.carrier %></td>
+          <td><%= shipment.tracking_number %></td>
+          <td><%= shipment.status %></td>
+          <td><%= shipment.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

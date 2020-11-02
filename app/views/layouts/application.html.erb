@@ -11,24 +11,38 @@
   </head>
 
   <body>
-    <p class="navbar-text float-right">
+    <nav class="nav-extended navbar-fixed">
       <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+        <div class="nav-wrapper">
+          <ul class="left">
+            <li>Logged in as <strong><%= current_user.email %></strong>.</li>
+          </ul>
+          <ul class="right hide-on-med-and-down">
+            <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
+          </ul>
+        </div>
+        <div class="nav-content">
+          <span class="nav-title"></span>
+          <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" href="<%=new_shipment_path%>">
+            <i class="material-icons">add</i>
+          </a>
+        </div>
       <% else %>
-        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+        <div class="nav-wrapper">
+          <ul>
+            <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+            <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+          </ul>
+        </div>
       <% end %>
-    </p>
+    </nav>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    <div class='container'>
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
 </html>
