@@ -1,25 +1,24 @@
-<div class="container">
-  <h1 class="red-text">My Shipments</h1>
-  <a href="<%=new_shipment_path%>" class="btn-floating btn-large red right"><i class="material-icons">add</i></a>
 
-  <table class="responsive-table">
-    <thead>
+<h1 class="red-text">My Shipments</h1>
+<a href="<%=new_shipment_path%>" class="btn-floating btn-large red right"><i class="material-icons">add</i></a>
+
+<table class="responsive-table">
+  <thead>
+    <tr>
+      <th>Paquetería</th>
+      <th>Número de guía</th>
+      <th>Status</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @shipments.each do |shipment| %>
       <tr>
-        <th>Paquetería</th>
-        <th>Número de guía</th>
-        <th>Status</th>
-        <th>Descripción</th>
+        <td><%= shipment.carrier %></td>
+        <td><%= shipment.tracking_number %></td>
+        <td><%= shipment.status %></td>
+        <td><%= shipment.description %></td>
       </tr>
-    </thead>
-    <tbody>
-      <% @shipments.each do |shipment| %>
-        <tr>
-          <td><%= shipment.carrier %></td>
-          <td><%= shipment.tracking_number %></td>
-          <td><%= shipment.status %></td>
-          <td><%= shipment.description %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+    <% end %>
+  </tbody>
+</table>

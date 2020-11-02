@@ -1,24 +1,26 @@
-<div class="container">
-  <a href="<%=root_path%>" class="btn-floating btn-large red right"><i class="material-icons">arrow_back</i></a>
-  <div class="row">
-    <div class="col s12">
-      <%= form_for @shipment do |f| %>
-        <h2 class="red-text">Envío nuevo</h2>
-          <div class="row">
-            <div class="input-field col s6">
-              <%= f.label :Ingresa_el_número_de_guía %><br>
-              <%= f.number_field :tracking_number, :required => true %>
-            </div>
-            <div class="input-field col s6">
-              <%= f.label :Nombre_de_la_paquetería %><br>
-              <%= f.text_field :carrier, :required => true %>
-            </div>
+
+<a href="<%=root_path%>" class="btn-floating btn-large red right"><i class="material-icons">arrow_back</i></a>
+<div class="row">
+  <div class="col s12">
+    <%= form_for @shipment do |f| %>
+      <h2 class="red-text">Envío nuevo</h2>
+        <div class="row">
+          <div class="input-field col s6">
+            <%= f.label :Ingresa_el_número_de_guía %><br>
+            <%= f.number_field :tracking_number, id: 'tracking_number' %>
           </div>
-        <button class="btn waves-effect waves-light red" name="action">
-          <%= f.submit 'Aceptar', :class => 'white-text'%>
-          <i class="material-icons right">send</i>
-        </button>
-      <% end %>
-    </div>
+          <div class="input-field col s6">
+            <%= f.label :Nombre_de_la_paquetería %><br>
+            <%= f.text_field :carrier, id: 'carrier'%>
+          </div>
+        </div>
+        <div class="row">
+        <textarea type="text_area" id="json_data" name="json_data" placeholder="Ingresa un array de JSON"></textarea>
+        </div>
+      <button class="btn waves-effect waves-light red" name="action">
+        <%= f.submit 'Aceptar', :class => 'white-text', :id => "submit"%>
+        <i class="material-icons right">send</i>
+      </button>
+    <% end %>
   </div>
 </div>
