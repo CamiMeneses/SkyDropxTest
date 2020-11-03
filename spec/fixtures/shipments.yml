@@ -1,0 +1,35 @@
+good_shipment: &base
+  user: camila
+  tracking_number: 449044304137821
+  carrier: FEDEX
+  status: Delivered
+  description:  Good Shipment
+
+incomplete_shipment:
+  user: camila
+  tracking_number: 449044304137821
+  carrier: FEDEX
+
+missing_tracking_number:
+  user: camila
+  carrier: FEDEX
+  status: Delivered
+  description:  missing_tracking_number
+
+missing_carrier:
+  user: camila
+  tracking_number: 449044304137821
+  status: Delivered
+  description:  missing_carrier
+
+missing_status:
+  user: camila
+  tracking_number: 449044304137821
+  carrier: FEDEX
+  description:  missing_status
+
+missing_description:
+  user: camila
+  tracking_number: 449044304137821
+  carrier: FEDEX
+  status: Delivered

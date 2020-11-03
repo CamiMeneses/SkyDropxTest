@@ -3,7 +3,7 @@
 class Shipment < ApplicationRecord
   belongs_to :user
 
-  validates_presence_of :tracking_number
+  validates_presence_of :tracking_number, :carrier, :status, :description
 
   def update_status_and_description
     status_i = search_info.status
