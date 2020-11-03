@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a website to track shipments and know their status using the fedex gem
 
-Things you may want to cover:
+![alt text](https://github.com/CamiMeneses/SkyDropxTest/blob/master/readme_files/index.png?raw=true)
 
-* Ruby version
+To search a new shipment, push the bottom '+' and add a new register or put a JSON like this:
+```
+[
+    {
+        "tracking_number": "449044304137821",
+        "carrier": "FEDEX"
+    },
+    {
+        "tracking_number": "920241085725456",
+        "carrier": "FEDEX"
+    },
+    {
+        "tracking_number": "568838414941",
+        "carrier": "FEDEX"
+    }
+]
+```
 
-* System dependencies
+![alt text](https://github.com/CamiMeneses/SkyDropxTest/blob/master/readme_files/new.png?raw=true)
 
-* Configuration
+## How to see this website:
 
-* Database creation
+1. Clone this repository
 
-* Database initialization
+2. Run the server: rails server
 
-* How to run the test suite
+3. Open your localhost:3000 in your browser
 
-* Services (job queues, cache servers, search engines, etc.)
+## To run tests:
+rspec
 
-* Deployment instructions
-
-* ...
